@@ -1,0 +1,10 @@
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\bin\Debug\netcoreapp2.1\Blog.Core.Model.deps.json
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\bin\Debug\netcoreapp2.1\Blog.Core.Model.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\bin\Debug\netcoreapp2.1\Blog.Core.Model.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\bin\Debug\netcoreapp2.1\Blog.Core.Model.xml
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.csprojAssemblyReference.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.csproj.CoreCompileInputs.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.AssemblyInfoInputs.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.AssemblyInfo.cs
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\obj\Debug\netcoreapp2.1\Blog.Core.Model.pdb
