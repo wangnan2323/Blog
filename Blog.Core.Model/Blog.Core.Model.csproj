@@ -5,8 +5,25 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\Blog.Core\Blog.Core.Model.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
-    <DocumentationFile>C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Model\Blog.Core.Model.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Seed\DBSeed.cs" />
+    <Compile Remove="Seed\MyContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="4.9.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Core.Common\Blog.Core.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Seed\" />
+  </ItemGroup>
 
 </Project>

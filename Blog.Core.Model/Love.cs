@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Blog.Core.Model
 {
@@ -9,6 +7,10 @@ namespace Blog.Core.Model
     /// </summary>
     public class Love
     {
+        public virtual string SayLoveU()
+        {
+            return "I ♥ U";
+        }
         /// <summary>
         /// id
         /// </summary>

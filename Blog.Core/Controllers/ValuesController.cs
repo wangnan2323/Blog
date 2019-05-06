@@ -32,15 +32,7 @@ namespace Blog.Core.Controllers
         {
             return "value";
         }
-        /// <summary>
-        /// 插入内容
-        /// </summary>
-        /// <param name="value"></param>
-        // POST api/values
-        [HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+   
 
         /// <summary>
         /// post
