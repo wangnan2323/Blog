@@ -29,6 +29,11 @@ namespace Blog.Core
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            #region 初始化DB
+            services.AddScoped<Blog.Core.Model.Models.DBSeed>();
+            services.AddScoped<Blog.Core.Model.Models.MyContext>();
+            #endregion
+
             #region Swagger
             services.AddSwaggerGen(c =>
             {

@@ -6,3 +6,10 @@ C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netco
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netcoreapp2.1\Blog.Core.IServices.AssemblyInfo.cs
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netcoreapp2.1\Blog.Core.IServices.dll
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netcoreapp2.1\Blog.Core.IServices.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\bin\Debug\netcoreapp2.1\Blog.Core.Common.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\bin\Debug\netcoreapp2.1\Blog.Core.Model.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\bin\Debug\netcoreapp2.1\Blog.Core.Model.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\bin\Debug\netcoreapp2.1\Blog.Core.Model.xml
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\bin\Debug\netcoreapp2.1\Blog.Core.Common.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netcoreapp2.1\Blog.Core.IServices.csprojAssemblyReference.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.IServices\obj\Debug\netcoreapp2.1\Blog.Core.IServices.csproj.CopyComplete

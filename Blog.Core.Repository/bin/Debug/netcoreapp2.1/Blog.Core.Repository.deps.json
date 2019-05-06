@@ -9,7 +9,8 @@
       "Blog.Core.Repository/1.0.0": {
         "dependencies": {
           "Blog.Core.IRepository": "1.0.0",
-          "Blog.Core.Model": "1.0.0"
+          "Blog.Core.Model": "1.0.0",
+          "sqlSugarCore": "4.9.8.1"
         },
         "runtime": {
           "Blog.Core.Repository.dll": {}

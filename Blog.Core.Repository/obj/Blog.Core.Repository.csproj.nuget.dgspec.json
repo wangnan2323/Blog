@@ -233,6 +233,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "sqlSugarCore": {
+              "target": "Package",
+              "version": "[4.9.8.1, )"
             }
           },
           "imports": [

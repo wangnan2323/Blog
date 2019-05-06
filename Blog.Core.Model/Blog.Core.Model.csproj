@@ -10,20 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Seed\DBSeed.cs" />
-    <Compile Remove="Seed\MyContext.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="sqlSugarCore" Version="4.9.8.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core.Common\Blog.Core.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Seed\" />
   </ItemGroup>
 
 </Project>
