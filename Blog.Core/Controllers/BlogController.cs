@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Blog.Core.IServices;
 using Blog.Core.Model.Models;
-using Blog.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,20 +14,16 @@ namespace Blog.Core.Controllers
     public class BlogController : ControllerBase
     {
 
-
-        // GET: api/Blog
+        IAdvertisementServices advertisementServices;
         /// <summary>
-        /// Sum接口
+        /// 构造函数 构造方法依赖注入
         /// </summary>
-        /// <param name="i">参数i</param>
-        /// <param name="j">参数j</param>
-        /// <returns></returns>
-        [HttpGet]
-        public int Get(int i, int j)
+        /// <param name="advertisementServices"></param>
+        public BlogController(IAdvertisementServices advertisementServices)
         {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-            return advertisementServices.Sum(i, j);
+            this.advertisementServices = advertisementServices;
         }
+
 
         // GET: api/Blog/5
         /// <summary>
@@ -37,11 +32,12 @@ namespace Blog.Core.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        public List<Advertisement> Get(int id)
+        public async Task<List<Advertisement>> Get(int id)
         {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
+            //通过依赖注入实例化对象 不需要new了
+            //IAdvertisementServices advertisementServices = new AdvertisementServices();
 
-            return advertisementServices.Query(d => d.Id == id);
+            return await advertisementServices.Query(d => d.Id == id);
         }
 
         // POST: api/Blog

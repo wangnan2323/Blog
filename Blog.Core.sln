@@ -9,24 +9,24 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core", "Blog.Core\Blog
 		{EA5E57D0-2B7D-4B0D-93FF-ED083E9B7632} = {EA5E57D0-2B7D-4B0D-93FF-ED083E9B7632}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Model", "Blog.Core.Model\Blog.Core.Model.csproj", "{F639AD71-FB09-4014-A8CC-FDEB81283C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Model", "Blog.Core.Model\Blog.Core.Model.csproj", "{F639AD71-FB09-4014-A8CC-FDEB81283C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Common", "Blog.Core.Common\Blog.Core.Common.csproj", "{EA5E57D0-2B7D-4B0D-93FF-ED083E9B7632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Common", "Blog.Core.Common\Blog.Core.Common.csproj", "{EA5E57D0-2B7D-4B0D-93FF-ED083E9B7632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.IRepository", "Blog.Core.IRepository\Blog.Core.IRepository.csproj", "{ABDACBB6-0A61-4EC1-BB98-10B5875891D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.IRepository", "Blog.Core.IRepository\Blog.Core.IRepository.csproj", "{ABDACBB6-0A61-4EC1-BB98-10B5875891D8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F639AD71-FB09-4014-A8CC-FDEB81283C6F} = {F639AD71-FB09-4014-A8CC-FDEB81283C6F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Repository", "Blog.Core.Repository\Blog.Core.Repository.csproj", "{913BE5C4-4004-4C0D-BE93-7931AC698019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Repository", "Blog.Core.Repository\Blog.Core.Repository.csproj", "{913BE5C4-4004-4C0D-BE93-7931AC698019}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F639AD71-FB09-4014-A8CC-FDEB81283C6F} = {F639AD71-FB09-4014-A8CC-FDEB81283C6F}
 		{ABDACBB6-0A61-4EC1-BB98-10B5875891D8} = {ABDACBB6-0A61-4EC1-BB98-10B5875891D8}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.IServices", "Blog.Core.IServices\Blog.Core.IServices.csproj", "{EC2E2FE8-EA1E-4C69-9791-48602127C638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.IServices", "Blog.Core.IServices\Blog.Core.IServices.csproj", "{EC2E2FE8-EA1E-4C69-9791-48602127C638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Services", "Blog.Core.Services\Blog.Core.Services.csproj", "{33BDA283-02A4-491A-AFA3-0DD1B66CBA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Services", "Blog.Core.Services\Blog.Core.Services.csproj", "{33BDA283-02A4-491A-AFA3-0DD1B66CBA9D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{913BE5C4-4004-4C0D-BE93-7931AC698019} = {913BE5C4-4004-4C0D-BE93-7931AC698019}
 		{EC2E2FE8-EA1E-4C69-9791-48602127C638} = {EC2E2FE8-EA1E-4C69-9791-48602127C638}

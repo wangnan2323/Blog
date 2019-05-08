@@ -28,7 +28,7 @@ namespace Blog.Core.Common.DB
                 DbType = DataBaseType.Sqlite;
                 return sqliteConnection;
             }
-           else if (isSqlServerEnabled)
+            else if (isSqlServerEnabled)
             {
                 DbType = DataBaseType.SqlServer;
                 return File.Exists(@"D:\my-file\dbCountPsw1.txt") ? File.ReadAllText(@"D:\my-file\dbCountPsw1.txt").Trim() : sqlServerConnection;
@@ -45,6 +45,7 @@ namespace Blog.Core.Common.DB
             }
             else
             {
+                DbType = DataBaseType.SqlServer;
                 return "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BlogDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             }
 

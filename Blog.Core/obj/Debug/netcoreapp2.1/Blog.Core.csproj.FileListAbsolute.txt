@@ -35,9 +35,5 @@ C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\B
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.Common.pdb
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IRepository.dll
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IServices.dll
-C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.Repository.dll
-C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.Services.dll
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IServices.pdb
-C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.Services.pdb
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IRepository.pdb
-C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.Repository.pdb

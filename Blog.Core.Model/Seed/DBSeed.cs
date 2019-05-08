@@ -105,6 +105,7 @@ namespace Blog.Core.Model.Models
                 #region UserRole
                 if (!await myContext.Db.Queryable<UserRole>().AnyAsync())
                 {
+                    
                     myContext.GetEntityDB<UserRole>().InsertRange(JsonHelper.ParseFormByJson<List<UserRole>>(GetNetData.Get(string.Format(GitJsonFileFormat,"UserRole"))));
                 }
                 #endregion
