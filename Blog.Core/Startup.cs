@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Autofac.Extras.DynamicProxy;
+using Blog.Core.AOP;
+using Blog.Core.Common.MemoryCache;
 using Blog.Core.IServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +35,9 @@ namespace Blog.Core
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //注入缓存
+            services.AddScoped<ICaching, MemoryCaching>();
 
             #region 初始化DB
             services.AddScoped<Blog.Core.Model.Models.DBSeed>();
@@ -64,14 +70,18 @@ namespace Blog.Core
             //实例化 AutoFac  容器   
             var builder = new ContainerBuilder();
 
+
+            builder.RegisterType<BlogCacheAOP>();//可以直接替换其他拦截器！一定要把拦截器进行注册
             //注册要通过反射创建的组件
             //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
             var dllPath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;//获取项目路径
             var servicesDllFile = Path.Combine(dllPath, "Blog.Core.Services.dll");//获取注入项目绝对路径
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);//直接采用加载文件的方法
             //var assemblysServices = Assembly.Load("Blog.Core.Services");//要记得!!!这个注入的是实现类层，不是接口层！不是 IServices
-            builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
-
+            builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces()//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+                                                            .InstancePerLifetimeScope()
+                                                            .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
+                                                            .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
             var repositoryDllFile = Path.Combine(dllPath, "Blog.Core.Repository.dll");//获取注入项目绝对路径
             var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);//直接采用加载文件的方法
             //var assemblysRepository = Assembly.Load("Blog.Core.Repository");//要记得!!!这个注入的是实现类层，不是接口层！不是 IRepository
@@ -79,6 +89,8 @@ namespace Blog.Core
 
             //将services填充到Autofac容器生成器中
             builder.Populate(services);
+
+
 
             //使用已进行的组件登记创建新容器
             var ApplicationContainer = builder.Build();

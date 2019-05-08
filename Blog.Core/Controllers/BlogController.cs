@@ -15,13 +15,16 @@ namespace Blog.Core.Controllers
     {
 
         IAdvertisementServices advertisementServices;
+        IBlogArticleServices blogArticleServices;
         /// <summary>
         /// 构造函数 构造方法依赖注入
         /// </summary>
         /// <param name="advertisementServices"></param>
-        public BlogController(IAdvertisementServices advertisementServices)
+        /// <param name="blogArticleServices"></param>
+        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices)
         {
             this.advertisementServices = advertisementServices;
+            this.blogArticleServices = blogArticleServices;
         }
 
 
@@ -56,6 +59,18 @@ namespace Blog.Core.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        /// <summary>
+        /// 获取博客列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBlogs")]
+        public async Task<List<BlogArticle>> GetBlogs()
+        {
+
+            return await blogArticleServices.getBlogs();
         }
     }
 }
