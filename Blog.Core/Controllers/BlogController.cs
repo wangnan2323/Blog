@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.Core.Common;
+using Blog.Core.Common.Redis;
 using Blog.Core.IServices;
 using Blog.Core.Model.Models;
 using Microsoft.AspNetCore.Http;
@@ -16,15 +18,17 @@ namespace Blog.Core.Controllers
 
         IAdvertisementServices advertisementServices;
         IBlogArticleServices blogArticleServices;
+        IRedisCacheManager redisCacheManager;
         /// <summary>
         /// 构造函数 构造方法依赖注入
         /// </summary>
         /// <param name="advertisementServices"></param>
         /// <param name="blogArticleServices"></param>
-        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices)
+        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices, IRedisCacheManager redisCacheManager)
         {
             this.advertisementServices = advertisementServices;
             this.blogArticleServices = blogArticleServices;
+            this.redisCacheManager = redisCacheManager;
         }
 
 
@@ -67,10 +71,25 @@ namespace Blog.Core.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("GetBlogs")]
+        
         public async Task<List<BlogArticle>> GetBlogs()
         {
+            var connect = Appsettings.app(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });//按照层级的顺序，依次写出来
+           
 
-            return await blogArticleServices.getBlogs();
+            List<BlogArticle> blogArticleList = new List<BlogArticle>();
+            //Controller使用Redis缓存
+            if (redisCacheManager.Get<object>("Redis.Blog") != null)
+            {
+                blogArticleList = redisCacheManager.Get<List<BlogArticle>>("Redis.Blog");
+            }
+            else
+            {
+                blogArticleList = await blogArticleServices.getBlogs();
+                redisCacheManager.Set("Redis.Blog", blogArticleList, TimeSpan.FromHours(2));//缓存2小时
+            }
+
+            return blogArticleList;
         }
     }
 }

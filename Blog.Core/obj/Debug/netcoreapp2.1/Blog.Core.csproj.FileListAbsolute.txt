@@ -37,3 +37,4 @@ C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\B
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IServices.dll
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IServices.pdb
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.IRepository.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\appsettings.json

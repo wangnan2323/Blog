@@ -54,7 +54,7 @@
             职能
             </summary>
         </member>
-        <member name="M:Blog.Core.Controllers.BlogController.#ctor(Blog.Core.IServices.IAdvertisementServices,Blog.Core.IServices.IBlogArticleServices)">
+        <member name="M:Blog.Core.Controllers.BlogController.#ctor(Blog.Core.IServices.IAdvertisementServices,Blog.Core.IServices.IBlogArticleServices,Blog.Core.Common.Redis.IRedisCacheManager)">
             <summary>
             构造函数 构造方法依赖注入
             </summary>

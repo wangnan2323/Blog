@@ -19,7 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
-
+using Blog.Core.Common.Redis;
 namespace Blog.Core
 {
     public class Startup
@@ -38,6 +38,8 @@ namespace Blog.Core
 
             //注入缓存
             services.AddScoped<ICaching, MemoryCaching>();
+            //注入Redis
+            services.AddScoped<IRedisCacheManager, RedisCacheManager>();//这里说下，如果是自己的项目，个人更建议使用单例模式 
 
             #region 初始化DB
             services.AddScoped<Blog.Core.Model.Models.DBSeed>();
