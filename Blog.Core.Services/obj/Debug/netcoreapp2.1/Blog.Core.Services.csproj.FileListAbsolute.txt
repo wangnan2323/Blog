@@ -19,3 +19,6 @@ C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Services\obj\Debug\netcor
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Services\obj\Debug\netcoreapp2.1\Blog.Core.Services.csproj.CopyComplete
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Services\obj\Debug\netcoreapp2.1\Blog.Core.Services.dll
 C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.Services\obj\Debug\netcoreapp2.1\Blog.Core.Services.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\netcoreapp2.1\Blog.Core.Services.deps.json
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\netcoreapp2.1\Blog.Core.Services.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\netcoreapp2.1\Blog.Core.Services.pdb

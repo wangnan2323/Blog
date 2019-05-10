@@ -26,6 +26,12 @@ using Blog.Core.AuthHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using AutoMapper;
+using log4net;
+using log4net.Config;
+using log4net.Repository;
+using Blog.Core.Log;
+using Blog.Core.Filter;
 
 namespace Blog.Core
 {
@@ -34,6 +40,12 @@ namespace Blog.Core
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //log4net
+            repository = LogManager.CreateRepository("");//需要获取日志的仓库名，也就是你的当然项目名
+
+            //指定配置文件，如果这里你遇到问题，应该是使用了InProcess模式，请查看Blog.Core.csproj,并删之 
+            XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));//配置文件
         }
 
         public IConfiguration Configuration { get; }
@@ -41,8 +53,13 @@ namespace Blog.Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            //log日志注入
+            services.AddSingleton<ILoggerHelper, LogHelper>();
+            services.AddMvc(o=> {
+                o.Filters.Add(typeof(GlobalExceptionsFilter));
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //注入AutoMapper
+            services.AddAutoMapper(typeof(Startup));//这是AutoMapper的2.0新特性
             //注入缓存
             services.AddScoped<ICaching, MemoryCaching>();
             //注入Redis
@@ -297,5 +314,10 @@ namespace Blog.Core
             });
             #endregion
         }
+
+        /// <summary>
+        /// log4net 仓储库
+        /// </summary>
+        public static ILoggerRepository repository { get; set; }
     }
 }

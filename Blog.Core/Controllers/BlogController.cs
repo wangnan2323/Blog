@@ -39,12 +39,11 @@ namespace Blog.Core.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        public async Task<List<Advertisement>> Get(int id)
+        public async Task<object> Get(int id)
         {
-            //通过依赖注入实例化对象 不需要new了
-            //IAdvertisementServices advertisementServices = new AdvertisementServices();
-
-            return await advertisementServices.Query(d => d.Id == id);
+            var model = await blogArticleServices.getBlogDetails(id);//调用该方法
+            var data = new { success = true, data = model };
+            return data;
         }
 
         // POST: api/Blog

@@ -1,0 +1,9 @@
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\bin\Debug\netcoreapp2.2\Blog.Core.FrameWork.deps.json
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\bin\Debug\netcoreapp2.2\Blog.Core.FrameWork.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\bin\Debug\netcoreapp2.2\Blog.Core.FrameWork.pdb
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.csprojAssemblyReference.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.csproj.CoreCompileInputs.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.AssemblyInfoInputs.cache
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.AssemblyInfo.cs
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.dll
+C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core.FrameWork\obj\Debug\netcoreapp2.2\Blog.Core.FrameWork.pdb

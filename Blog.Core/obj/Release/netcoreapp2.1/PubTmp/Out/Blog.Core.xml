@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blog.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Blog.Core.AOP.BlogCacheAOP">
+            <summary>
+            面向切面的缓存使用
+            </summary>
+        </member>
+        <member name="T:Blog.Core.AOP.BlogLogAOP">
+            <summary>
+            拦截器BlogLogAOP 继承IInterceptor接口
+            </summary>
+        </member>
+        <member name="M:Blog.Core.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            实例化IInterceptor唯一方法 
+            </summary>
+            <param name="invocation">包含被拦截方法的信息</param>
+        </member>
+        <member name="M:Blog.Core.AuthHelper.OverWrite.JwtHelper.IssueJwt(Blog.Core.AuthHelper.OverWrite.TokenModelJwt)">
+            <summary>
+            颁发JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.AuthHelper.OverWrite.JwtHelper.SerializeJwt(System.String)">
+            <summary>
+            解析
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.AuthHelper.OverWrite.TokenModelJwt">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.OverWrite.TokenModelJwt.Uid">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.OverWrite.TokenModelJwt.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.OverWrite.TokenModelJwt.Work">
+            <summary>
+            职能
+            </summary>
+        </member>
+        <member name="T:Blog.Core.AuthHelper.JwtToken">
+            <summary>
+            JWTToken生成类
+            </summary>
+        </member>
+        <member name="M:Blog.Core.AuthHelper.JwtToken.BuildJwtToken(System.Security.Claims.Claim[],Blog.Core.AuthHelper.PermissionRequirement)">
+            <summary>
+            获取基于JWT的Token
+            </summary>
+            <param name="claims">需要在登陆的时候配置</param>
+            <param name="permissionRequirement">在startup中定义的参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.AuthHelper.PermissionHandler">
+            <summary>
+            权限授权处理器
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionHandler.Schemes">
+            <summary>
+            验证方案提供对象
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionHandler.roleModulePermissionServices">
+            <summary>
+            services 层注入
+            </summary>
+        </member>
+        <member name="M:Blog.Core.AuthHelper.PermissionHandler.#ctor(Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,Blog.Core.IServices.IRoleModulePermissionServices)">
+            <summary>
+            构造函数注入
+            </summary>
+            <param name="schemes"></param>
+            <param name="roleModulePermissionServices"></param>
+        </member>
+        <member name="T:Blog.Core.AuthHelper.PermissionItem">
+            <summary>
+            用户或角色或其他凭据实体,就像是订单详情一样
+            之前的名字是 Permission
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionItem.Role">
+            <summary>
+            用户或角色或其他凭据名称
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionItem.Url">
+            <summary>
+            请求Url
+            </summary>
+        </member>
+        <member name="T:Blog.Core.AuthHelper.PermissionRequirement">
+            <summary>
+            必要参数类，类似一个订单信息
+            继承 IAuthorizationRequirement，用于设计自定义权限处理器PermissionHandler
+            因为AuthorizationHandler 中的泛型参数 TRequirement 必须继承 IAuthorizationRequirement
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.Permissions">
+            <summary>
+            用户权限集合，一个订单包含了很多详情，
+            同理，一个网站的认证发行中，也有很多权限详情(这里是Role和URL的关系)
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.DeniedAction">
+            <summary>
+            无权限action
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.ClaimType">
+            <summary>
+            认证授权类型
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.LoginPath">
+            <summary>
+            请求路径
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.Issuer">
+            <summary>
+            发行人
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.Audience">
+            <summary>
+            订阅人
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.Expiration">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:Blog.Core.AuthHelper.PermissionRequirement.SigningCredentials">
+            <summary>
+            签名验证
+            </summary>
+        </member>
+        <member name="M:Blog.Core.AuthHelper.PermissionRequirement.#ctor(System.String,System.Collections.Generic.List{Blog.Core.AuthHelper.PermissionItem},System.String,System.String,System.String,Microsoft.IdentityModel.Tokens.SigningCredentials,System.TimeSpan)">
+            <summary>
+            构造
+            </summary>
+            <param name="deniedAction">拒约请求的url</param>
+            <param name="permissions">权限集合</param>
+            <param name="claimType">声明类型</param>
+            <param name="issuer">发行人</param>
+            <param name="audience">订阅人</param>
+            <param name="signingCredentials">签名验证实体</param>
+            <param name="expiration">过期时间</param>
+        </member>
+        <member name="M:Blog.Core.AutoMapper.CustomProfile.#ctor">
+            <summary>
+            配置构造函数，用来创建关系映射
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Controllers.BlogController.#ctor(Blog.Core.IServices.IAdvertisementServices,Blog.Core.IServices.IBlogArticleServices,Blog.Core.Common.Redis.IRedisCacheManager)">
+            <summary>
+            构造函数 构造方法依赖注入
+            </summary>
+            <param name="advertisementServices"></param>
+            <param name="blogArticleServices"></param>
+        </member>
+        <member name="M:Blog.Core.Controllers.BlogController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.BlogController.GetBlogs">
+            <summary>
+            获取博客列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.Controllers.LoginController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Controllers.LoginController.#ctor(Blog.Core.IServices.ISysUserInfoServices,Blog.Core.IServices.IUserRoleServices,Blog.Core.IServices.IRoleServices,Blog.Core.AuthHelper.PermissionRequirement)">
+            <summary>
+            构造函数注入
+            </summary>
+            <param name="sysUserInfoServices"></param>
+            <param name="userRoleServices"></param>
+            <param name="roleServices"></param>
+            <param name="requirement"></param>
+        </member>
+        <member name="M:Blog.Core.Controllers.LoginController.GetJwtStr(System.String,System.String)">
+            <summary>
+            获取JWT的方法
+            </summary>
+            <param name="id">id</param>
+            <param name="sub">角色</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.LoginController.GetJwtToken3(System.String,System.String)">
+            <summary>
+            获取JWT的方法 3.0
+            </summary>
+            <param name="name"></param>
+            <param name="pass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.LoginController.Getjsonp(System.String,System.Int64,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="sub"></param>
+            <param name="expiresSliding"></param>
+            <param name="expiresAbsoulute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.ValuesController.Get">
+            <summary>
+            获取列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            获取详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.ValuesController.Post(Blog.Core.Model.Love)">
+            <summary>
+            post
+            </summary>
+            <param name="love">model实体类参数</param>
+        </member>
+        <member name="M:Blog.Core.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            更新内容
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Blog.Core.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            删除内容
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>

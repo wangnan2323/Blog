@@ -351,6 +351,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",

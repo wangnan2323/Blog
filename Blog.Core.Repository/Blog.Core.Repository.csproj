@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\wangxin\source\repos\Blog.Core.Demo\Blog.Core\bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="sqlSugarCore" Version="4.9.8.1" />
   </ItemGroup>

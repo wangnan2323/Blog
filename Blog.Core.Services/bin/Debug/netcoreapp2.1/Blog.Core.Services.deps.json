@@ -1,18 +1,44 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "426c7beff3ec83058ec6b59edf1b0c76641674cb"
+    "signature": "6b71119b10355efd03656f10af2c24c7e87090e8"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Blog.Core.Services/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.1.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.0",
           "Blog.Core.IServices": "1.0.0",
           "Blog.Core.Repository": "1.0.0"
         },
         "runtime": {
           "Blog.Core.Services.dll": {}
+        }
+      },
+      "AutoMapper/8.1.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.1.0.0",
+            "fileVersion": "8.1.0.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+        "dependencies": {
+          "AutoMapper": "8.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "6.1.0.0"
+          }
         }
       },
       "Configgy/3.0.3": {
@@ -47,6 +73,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Data.Sqlite/2.2.1": {
         "dependencies": {
           "Microsoft.Data.Sqlite.Core": "2.2.1",
@@ -1747,6 +1774,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Go75WXHE7p/8CtRaxZnvVEfcSh7xpE6zx9wkgN4I1BxvlzP0hoiTLHSXDYXgv9CoxaRj4ahwzCA/iwdpvyQyOA==",
+      "path": "automapper/8.1.0",
+      "hashPath": "automapper.8.1.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vqbyqXknln1NFn80fbyJVPqJ3LMZhhhq8wMAl4BGTIH6GmK3gtGofuvo8bnWXXuD07y1lnMEuCmiNacvdtxPkw==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.1.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.1.0.nupkg.sha512"
+    },
     "Configgy/3.0.3": {
       "type": "package",
       "serviceable": true,
@@ -1760,6 +1801,13 @@
       "sha512": "sha512-QD/zPoXQcKWK3+3goe1tmJkkIrX4QV0DxFcNAtoeaifQZ0e4Onhxh6Q7PjAe8U3SnyAADtEYBP6GXOLhDnOEog==",
       "path": "configgy.microsoft.extensions.configuration/1.0.3",
       "hashPath": "configgy.microsoft.extensions.configuration.1.0.3.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite/2.2.1": {
       "type": "package",
